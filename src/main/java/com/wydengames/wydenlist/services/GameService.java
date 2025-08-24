@@ -17,6 +17,7 @@ public class GameService {
     @Autowired
     private GameRepository gameRepository;
 
+    @Transactional
     public List<GameMinDTO> findAll(){
         return gameRepository.findAll().stream().map(GameMinDTO::new).toList();
     }
@@ -27,5 +28,10 @@ public class GameService {
                 () -> new EntityNotFoundException("Recurso nao encontrado")
         );
         return new GameDTO(result);
+    }
+
+    @Transactional
+    public List<GameMinDTO> findByList(Long listId){
+        return gameRepository.searchByList(listId).stream().map(GameMinDTO::new).toList();
     }
 }
