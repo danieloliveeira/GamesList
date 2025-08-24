@@ -2,7 +2,6 @@ package com.wydengames.wydenlist.controllers;
 
 import com.wydengames.wydenlist.dto.GameDTO;
 import com.wydengames.wydenlist.dto.GameMinDTO;
-import com.wydengames.wydenlist.entities.Game;
 import com.wydengames.wydenlist.services.GameService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
